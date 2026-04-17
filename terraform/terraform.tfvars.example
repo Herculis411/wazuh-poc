@@ -1,0 +1,31 @@
+# ============================================================
+# Wazuh PoC — Terraform Variables
+# Copy this file to terraform.tfvars and fill in your values
+# NEVER commit terraform.tfvars to git
+# ============================================================
+
+# AWS region
+aws_region = "us-east-1"
+
+# Your existing AWS key pair name (from EC2 > Key Pairs console)
+key_name = "your-key-pair-name"
+
+# Path to your private key file on your local machine
+private_key_path = "~/.ssh/your-key.pem"
+
+# Your VirusTotal API key (free from https://virustotal.com)
+virustotal_api_key = "YOUR_VIRUSTOTAL_API_KEY_HERE"
+
+# Your public IP in CIDR format — restricts SSH and dashboard access
+# Find your IP: curl ifconfig.me
+your_ip_cidr = "YOUR_PUBLIC_IP/32"
+
+# Instance types
+# Wazuh server needs minimum 4GB RAM — t3.medium has 4GB
+wazuh_server_instance_type = "t3.medium"
+wazuh_agent_instance_type  = "t3.micro"
+
+# Ubuntu 22.04 LTS AMI for us-east-1
+# If using a different region update this AMI ID
+# Find AMIs: https://cloud-images.ubuntu.com/locator/ec2/
+ubuntu_ami = "ami-0261755bbcb8c4a84"
